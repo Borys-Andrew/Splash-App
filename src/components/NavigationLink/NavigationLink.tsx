@@ -10,7 +10,7 @@ type Props = {
 
 export const NavigationLink: React.FC<Props> = ({ to, title }) => (
   <NavLink
-    className={({ isActive }) => cn('navbar-item', {
+    className={({ isActive }) => cn('nav-link', {
       isActive,
     })}
     to={to}

@@ -1,0 +1,9 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}

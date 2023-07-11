@@ -1,0 +1,62 @@
+.register{
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  &__label-text {
+    font-size: 15px;
+  }
+
+  &__label-input {
+    padding: 15px 10px;
+    font-size: medium;
+    // border-radius: 5px;
+  }
+
+  &__label-error-text {
+    color: red;
+    font-size: small;
+  }
+
+  &__submit-btn {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #364136;
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      background-color: #245624;
+    }
+
+    /* Add :active effect */
+    &:active {
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border: 1px solid #364136;
+      color: #364136;
+    }
+  }
+}

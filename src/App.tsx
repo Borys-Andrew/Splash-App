@@ -7,13 +7,14 @@ import { LoginPage } from './Pages/LoginPage';
 import { GalleryPage } from './Pages/GalleryPage';
 import { FavoritePage } from './Pages/FavoritePage';
 import { NotFoundPage } from './Pages/NotFoundPage';
+import { Footer } from './components/Footer';
 import './App.scss';
 
 export const App: React.FC = () => {
   return (
     <div className="app">
       <Header />
-      <main>
+      <main className="main">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 };
