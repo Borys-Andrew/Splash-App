@@ -1,8 +1,6 @@
-import { UserRegister } from '../types/User';
-
-export const setToLocalStorage = (
+export const setToLocalStorage = <T>(
   key: string,
-  users: UserRegister[],
+  data: T,
 ) => {
-  localStorage.setItem(key, JSON.stringify(users));
+  localStorage.setItem(key, JSON.stringify(data));
 };

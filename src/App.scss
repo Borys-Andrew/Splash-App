@@ -55,6 +55,10 @@ fieldset {
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100vh;
+}
+
+.main {
+  padding: 20px 0;
   height: 100vh;
 }

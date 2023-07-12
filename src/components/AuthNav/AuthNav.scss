@@ -1,4 +1,13 @@
 .auth-nav {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout-btn{
+  // background:#ff5a60!important ;
+  padding: 20px 0;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
 }

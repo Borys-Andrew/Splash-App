@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { Container } from '../../components/Container';
+import { UserContext } from '../../context/UserContext';
 import { UserLogin, UserRegister } from '../../types/User';
 import { getFromLocalStorage } from '../../utils/getFromLocalStorage';
 import './LoginPage.scss';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,
@@ -23,13 +26,15 @@ export const LoginPage: React.FC = () => {
 
     if (findUser) {
       if (findUser.password === data.password) {
-        console.log('Very good');
+        setUser(findUser);
         navigate('/home');
       } else {
-        console.log('Password is incorrect');
+        // eslint-disable-next-line no-alert
+        alert('Password is incorrect');
       }
     } else {
-      console.log('User not found');
+      // eslint-disable-next-line no-alert
+      alert('User not found');
     }
   };
 

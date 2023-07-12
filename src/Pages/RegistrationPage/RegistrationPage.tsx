@@ -9,6 +9,7 @@ import './RegistrationPage.scss';
 
 export const RegistrationPage: React.FC = () => {
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -37,8 +38,6 @@ export const RegistrationPage: React.FC = () => {
 
       return;
     }
-
-    // console.log('isUserRegister==>', isUserRegister);
 
     setToLocalStorage('users', [...users, data]);
     navigate('/login');

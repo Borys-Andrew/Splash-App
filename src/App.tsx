@@ -7,8 +7,8 @@ import { LoginPage } from './Pages/LoginPage';
 import { GalleryPage } from './Pages/GalleryPage';
 import { FavoritePage } from './Pages/FavoritePage';
 import { NotFoundPage } from './Pages/NotFoundPage';
-import { Footer } from './components/Footer';
 import './App.scss';
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 
 export const App: React.FC = () => {
   return (
@@ -16,16 +16,36 @@ export const App: React.FC = () => {
       <Header />
       <main className="main">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={(
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            )}
+          />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/favorite" element={<FavoritePage />} />
+          <Route
+            path="/gallery"
+            element={(
+              <ProtectedRoute>
+                <GalleryPage />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/favorite"
+            element={(
+              <ProtectedRoute>
+                <FavoritePage />
+              </ProtectedRoute>
+            )}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 };

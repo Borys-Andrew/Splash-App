@@ -47,5 +47,8 @@ export interface PhotoPreview {
   alt_description: string;
   created_at: string;
   description: string;
-  url: string;
+  urls: {
+    regular: string;
+    thumb: string;
+  };
 }
